@@ -12,7 +12,7 @@ import cv2
 from collections import deque
 import numpy as np
 import time
-
+import pandas as pd
 
 numframesut = 100
 umframesth = 1000
@@ -169,6 +169,23 @@ while True:
 fps.stop()
 print("[INFO] elasped time: {:.2f}".format(fps.elapsed()))
 print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
+
+time.sleep(0.5)
+
+print("[INFO] writing data")
+
+coordArray = np.array([])
+#coordArray = np.concatenate((coordArrayX, coordArrayY))
+data = {'X Coord' : coordArrayX, 'Y Coord' : coordArrayY}
+df1 = pd.DataFrame(data=data)
+#df1 = pd.DataFrame([coordArrayX,coordArrayY])
+df1.to_csv("H:/03_Software/Python/IncreaseFPSPicamera/Logging/OrbitCoordinatesPixel.csv", index=False)
+
+#np.savetxt('H:/03_Software/Python/IncreaseFPSPicamera/Logging/OrbitCoordinatesPixel.csv', [coordArray], fmt = '%d',delimiter = ',')
+
+time.sleep(0.5)
+
+print("[INFO] data written")
 
 # do a bit of cleanup
 cv2.destroyAllWindows()
