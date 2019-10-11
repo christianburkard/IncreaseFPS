@@ -13,6 +13,7 @@ import imutils
 import time
 import cv2
 from collections import deque
+import numpy as np
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -89,6 +90,13 @@ tracker = None
 writer = None
 confdef = 0.4
 fps = FPS().start()
+
+
+
+coordArrayX = np.array([])
+coordArrayY = np.array([])
+radiusArray = np.array([])
+
 
 # loop over some frames...this time using the threaded stream
 while fps._numFrames < numframes:
