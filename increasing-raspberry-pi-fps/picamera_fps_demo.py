@@ -7,7 +7,7 @@ from __future__ import print_function
 from imutils.video.pivideostream import PiVideoStream
 from imutils.video import FPS
 from picamera.array import PiRGBArray
-from picamera import PiCamera
+#from picamera import PiCamera
 import argparse
 import imutils
 import time
@@ -199,14 +199,6 @@ while fps._numFrames < numframes:
     if key == ord("r"):
         print("Exiting... ")
         break
-    fps.update()
-
-    fps.stop()
-
-
-
-
-
 
 
 
