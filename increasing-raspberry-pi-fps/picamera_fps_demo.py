@@ -107,7 +107,7 @@ while fps._numFrames < numframes:
     frame = vs.read()
     try:
         frame.shape
-        print("checked for shape".format(img.shape))
+        print("checked for shape".format(frame.shape))
     except AttributeError:
         print("shape not found")
         #code to move to next frame
