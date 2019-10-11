@@ -12,6 +12,7 @@ import argparse
 import imutils
 import time
 import cv2
+from collections import deque
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
