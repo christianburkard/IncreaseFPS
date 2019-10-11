@@ -44,7 +44,7 @@ for (i, f) in enumerate(stream):
     frame = imutils.resize(frame, width=400)
 
     # check to see if the fraif args["display"] > 0:
-    show("Frame", frame)
+    cv2.imshow("Frame", frame)
     cv2.waitKey(1) & 0xFF
 
     # clear the stream in preparation for the next frame and update
@@ -82,9 +82,9 @@ while fps._numFrames < numframes:
     frame = imutils.resize(frame, width=400)
 
     # check to see if the frame should be displayed to our screen
-    if args["display"] > 0:
-        cv2.imshow("Frame", frame)
-        key = cv2.waitKey(1) & 0xFF
+
+    cv2.imshow("Frame", frame)
+    key = cv2.waitKey(1) & 0xFF
 
     # update the FPS counter
     fps.update()
